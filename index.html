@@ -1,99 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
     <title>One Day Full of Questions</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+    <link rel="stylesheet" href="css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
 
-<body>
+  <body>
+    <div style="position: fixed; top: 10px; right: 10px;">
+    </div>
     <audio src="audio/song.mp3" controls autoplay loop hidden>
-        <p>Your browser does not support the audio element</p>
+      <p>Your browser does not support the audio element</p>
     </audio>
-    <div class="container mt-5 show" id="start">
-        <div class="col align-self-center">
-            <div class="row mt-3 d-flex justify-content-center">
-                <img src="gambar/Judul.png" class="img-fluid w-100" style="object-fit: cover;">
-            </div>                        
-            <div class="row mt-4 d-flex justify-content-end">
-                <div class="d-flex flex-column align-items-center">
-                    <button id="startBtn" class="btn btn-lg bg-dark text-white mb-3" onclick="startGame()">Cerita</button>
-                    <button id="startAcv" class="btn btn-lg bg-dark text-white mb-3" onclick="showAchievements()">Pencapaian</button>
-                    <button id="startOpt" class="btn btn-lg bg-dark text-white mb-3" onclick="showOptions()">Options</button>
-                </div>
-            </div>                                
+
+
+    <div class="modal fade" id="namaModal" tabindex="-1" role="dialog" aria-labelledby="namaModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="namaModalLabel">Masukan Nama Anda</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input class="form-control bg-dark text-white" type="text" />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="saveNama()">Simpan</button>
+          </div>
         </div>
+      </div>
+    </div>
+
+    <div class="container mt-5 hide" id="start">
+      <div class="col align-self-center">
+        <div class="row mt-3 d-flex justify-content-center">
+          <img
+            src="gambar/Judul.png"
+            class="img-fluid w-100"
+            style="object-fit: cover"
+          />
+        </div>
+        <div class="row mt-4 d-flex justify-content-end">
+          <div class="d-flex flex-column align-items-center">
+            <button
+              id="startBtn"
+              class="btn btn-lg bg-dark text-white mb-3"
+              onclick="startGame()"
+            >
+              Cerita
+            </button>
+            <button
+              id="startAcv"
+              class="btn btn-lg bg-dark text-white mb-3"
+              onclick="showAchievements()"
+            >
+              Pencapaian
+            </button>
+            <button
+              id="startOpt"
+              class="btn btn-lg bg-dark text-white mb-3"
+              onclick="showOptions()"
+            >
+              Options
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="container mt-5 hide" id="game_question">
-        <div class="container">
-            <div id="resume">
-                <div class="row d-flex justify-content-center mb-5">
-                    <h6 class="text-danger text-center mt-4">Story</h6>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12 col-md-6 text-center">
-                        <img class="card-img-top" src="" alt="Card image cap" id="continueImage">
-                    </div>
-                    <div class="col-sm-12 col-md-6">
-                        <div class="container d-flex h-100 bg-text">
-                            <div class="row justify-content-center align-self-center">
-                                <h5 class="card-title text-center" id="continueTitle"></h5>
-                                <p class="card-text text-justify" id="continueText"></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-4 d-flex justify-content-center space">
-                    <input class="btn-outline-info w-50" id="btn-resume" type="button" value="continue" onclick="hideResume(), up()">
-                </div>
+      <div class="container">
+        <div id="resume">
+          <div class="row d-flex justify-content-center mb-5">
+            <h6 class="text-danger text-center mt-4">Story</h6>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-md-6 text-center d-flex justify-content-end align-items-end">
+              <img
+                class="col-md-6"
+                src=""
+                id="continueImage"
+              />
             </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="container d-flex h-100 bg-text">
+                <div class="row justify-content-center align-self-center">
+                  <h5 class="card-title text-center" id="continueTitle"></h5>
+                  <p class="card-text text-justify" id="continueText"></p>
+                </div>
+              </div>
+            </div>
+          </div>S
+        
+          <div 
+            <input
+            class="btn-outline-info w-50"
+            id="btn-menu"
+            type="button"
+            value="Menu"
+            onclick="hideResume(), up()"
+           />
         </div>
+          <div class="row mt-4 d-flex justify-content-center space">
+            <input
+            class="btn-outline-info w-50"
+            id="btn-menu"
+            type="button"
+            value="Menu"
+            onclick="hideResume(), up()"
+           />
+            <input
+              class="btn-outline-info w-50"
+              id="btn-resume"
+              type="button"
+              value="continue"
+              onclick="hideResume(), up()"
+            />
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="container mt-5 hide mb-4" id="game_choice">
-        <div class="container">
-            <div class="row d-flex justify-content-center">
-                <h6 class="text-danger text-center mt-4">TIME TO CHOOSE!</h6>
-            </div>
-            <div class="row mt-3">
-                <div class="col-sm-12 col-md-6 text-center">
-                    <img class="card-img-top" src="" alt="Card image cap" id="card-image">
-                </div>
-                <div class="col-sm-12 col-md-6">
-                    <div class="container d-flex h-100 bg-text text-center">
-                        <div class="row justify-content-center align-self-center">
-                            <h5 class="card-title text-center" id="card-title"></h5>
-                            <p class="card-text text-justify" id="card-text"></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row d-flex justify-content-center mt-5 space">
-                <h5 class="text-danger text-justify">What is your decision?</h5>
-            </div>
-            <div class="row">
-                <div class="container">
-                    <div class="col-sm-12 d-flex justify-content-center mt-2 mb-4">
-                        <input class="btn btn-outline-info w-75" type="button" id="btn1"
-                            onclick="chooseOption(this.value), up()">
-                        <input class="btn btn-outline-info w-75" type="button" id="btn2"
-                            onclick="chooseOption(this.value), up()">
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <h6 class="text-danger text-center mt-4">TIME TO CHOOSE!</h6>
         </div>
+        <div class="row mt-3">
+          <div class="col-sm-12 col-md-6 text-center">
+            <img
+              class="card-img-left"
+              src=""
+              id="card-image"
+            />
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <div class="container d-flex h-100 bg-text text-center">
+              <div class="row justify-content-center align-self-center">
+                <h5 class="card-title text-center" id="card-title"></h5>
+                <p class="card-text text-justify" id="card-text"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row d-flex justify-content-center mt-5 space">
+          <h5 class="text-danger text-justify">What is your decision?</h5>
+        </div>
+        <div class="row">
+          <div class="container">
+            <div class="col-sm-12 d-flex justify-content-center mt-2 mb-4">
+              <input
+                class="btn btn-outline-info w-75"
+                type="button"
+                id="btn1"
+                onclick="chooseOption(this.value), up()"
+              />
+              <input
+                class="btn btn-outline-info w-75"
+                type="button"
+                id="btn2"
+                onclick="chooseOption(this.value), up()"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <script src="javascript/options.js" type="text/javascript"></script>
     <script src="javascript/index.js" type="text/javascript"></script>
-</body>
-
+    <script>
+      window.onload = function() {
+        var startElement = document.getElementById('start');
+        startElement.style.display = 'none'; // Menyembunyikan elemen
+        startElement.style.opacity = '0.5'; // Membuat elemen transparan
+        startElement.style.pointerEvents = 'none'; // Mencegah interaksi dengan elemen
+      };
+    </script>
+    <script>
+      $(document).ready(function(){
+        $('#namaModal').modal('show');
+      });
+    </script>
+    <script>
+      function saveNama() {
+        var namaInput = document.querySelector('#namaModal .modal-body input').value;
+        if (namaInput.trim() !== '') {
+          $('#namaModal').modal('hide');
+          localStorage.setItem('namaPengguna', namaInput); // Menyimpan nama ke local storage
+          var startElement = document.getElementById('start');
+          startElement.style.display = 'block'; // Menampilkan elemen start
+          startElement.style.opacity = '1'; // Mengatur opasitas kembali ke default
+          startElement.style.pointerEvents = 'auto'; // Mengizinkan interaksi dengan elemen
+        } else {
+          alert('Silakan masukkan nama Anda.');
+        }
+      }
+    </script>
+  </body>
 </html>
