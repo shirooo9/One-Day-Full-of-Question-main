@@ -1,0 +1,119 @@
+<style>
+  body {
+    margin: 1em 2em;
+  }
+
+  .time-display {
+    border-radius: 18px;
+    border: 8px solid rgba(116, 119, 117, 0.5);
+    background-color: #fff; /* Diubah dari var(--Schemes-Scrim, #000) menjadi putih */
+    display: flex;
+    gap: 0;
+  }
+  .time-header {
+    justify-content: space-between;
+    align-self: start;
+    display: flex;
+    gap: 4px;
+    font: 400 14px/143% Roboto, sans-serif;
+    color: var(--Schemes-On-Surface, #171d1b);
+    letter-spacing: 0.25px;
+    flex: 1;
+    padding: 0 16px;
+  }
+  .time-text {
+    margin: auto 0;
+  }
+  .header-icon {
+    aspect-ratio: 1.15;
+    object-fit: auto;
+    object-position: center;
+    width: 46px;
+  }
+  .content-wrapper {
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    background-color: var(--Schemes-Surface, #f4fbf8);
+    display: flex;
+    flex-direction: column;
+    padding: 2px 0;
+  }
+  .indicator-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 14px;
+  }
+  .indicator-square {
+    border-radius: 2px;
+    background-color: var(--Schemes-On-Surface, #171d1b);
+    width: 16px;
+    height: 16px;
+  }
+  .indicator-bottom {
+    display: flex;
+    margin-top: 64px;
+    flex-direction: column;
+    justify-content: center;
+    padding: 14px;
+  }
+  .indicator-circle {
+    border-radius: 100px;
+    background-color: rgba(23, 29, 27, 1);
+    width: 16px;
+    height: 16px;
+  }
+  .footer-icon {
+    aspect-ratio: 0.98;
+    object-fit: auto;
+    object-position: center;
+    width: 43px;
+    align-self: center;
+    margin-top: 64px;
+  }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page 3</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="content">
+      <h1>Welcome to Page 3</h1>
+      <button class="nextPage" data-target="page4.html">Go to Page 4</button>
+      <button class="prevPage" data-target="page2.html">Go to Page 2</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<section class="time-display">
+  <header class="time-header">
+    <time class="time-text">9:30</time>
+    <img
+      src="https://cdn.builder.io/api/v1/image/assets/TEMP/37359fe27e4ac4d087703f16d3ab3aeb90e424a8ce86d703ac0eb2da1c2d5ad6?apiKey=b0305b0e0a2a481cacd90274eae4b8bf&"
+      alt=""
+      class="header-icon"
+      loading="lazy"
+    />
+  </header>
+  <div class="content-wrapper">
+    <div class="indicator-top">
+      <div class="indicator-square" role="presentation"></div>
+    </div>
+    <div class="indicator-bottom">
+      <div class="indicator-circle" role="presentation"></div>
+    </div>
+    <img
+      src="https://cdn.builder.io/api/v1/image/assets/TEMP/65dfc56aad7bda323371ad741d3cea1e4a987d18f4a1dfa3c6033fff586a0859?apiKey=b0305b0e0a2a481cacd90274eae4b8bf&"
+      alt=""
+      class="footer-icon"
+      loading="lazy"
+    />
+  </div>
+</section>

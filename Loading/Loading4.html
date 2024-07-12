@@ -1,0 +1,228 @@
+<style>
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    border-radius: 18px;
+    border: 8px solid rgba(116, 119, 117, 0.5);
+    background-color: #fff;
+    max-width: 800px;
+    flex-direction: column;
+  }
+
+  .content-wrapper {
+    display: flex;
+    width: 100%;
+    gap: 0;
+  }
+
+  @media (max-width: 991px) {
+    .content-wrapper {
+      max-width: 100%;
+      flex-wrap: wrap;
+    }
+  }
+
+  .left-column {
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    flex-basis: 0;
+    width: fit-content;
+    padding: 0 20px;
+  }
+
+  @media (max-width: 991px) {
+    .left-column {
+      max-width: 100%;
+    }
+  }
+
+  .icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    align-self: stretch;
+    padding: 0 16px;
+  }
+
+  @media (max-width: 991px) {
+    .icon-wrapper {
+      max-width: 100%;
+      padding-left: 20px;
+    }
+  }
+
+  .icon {
+    aspect-ratio: 1.15;
+    object-fit: auto;
+    object-position: center;
+    width: 46px;
+  }
+
+  .progress-circle {
+    border-radius: 50%;
+    background: conic-gradient(
+      from 180deg at 50% 50%,
+      #50a3c3 0deg,
+      #50a3c3 63.24300169944763deg,
+      rgba(255, 255, 255, 0) 360deg
+    );
+    display: flex;
+    margin-top: 74px;
+    width: 80px;
+    flex-direction: column;
+    align-items: center;
+    height: 80px;
+    padding: 67px 34px 0;
+  }
+
+  @media (max-width: 991px) {
+    .progress-circle {
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+  }
+
+  .progress-indicator {
+    border-radius: 50%;
+    background-color: #50a3c3;
+    width: 100%;
+    height: 12px;
+  }
+
+  .loading-text {
+    color: #50a3c3;
+    letter-spacing: 0.25px;
+    margin-top: 32px;
+    font: 700 60px/33% Roboto Slab, sans-serif;
+  }
+
+  @media (max-width: 991px) {
+    .loading-text {
+      font-size: 40px;
+    }
+  }
+
+  .right-column {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    background-color: var(--Schemes-Surface, #f4fbf8);
+    flex-direction: column;
+    padding: 2px 0;
+  }
+
+  .rectangle-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 14px;
+  }
+
+  .rectangle {
+    border-radius: 2px;
+    background-color: var(--Schemes-On-Surface, #171d1b);
+    height: 16px;
+  }
+
+  .pill-wrapper {
+    display: flex;
+    margin-top: 64px;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: 14px 15px;
+  }
+
+  @media (max-width: 991px) {
+    .pill-wrapper {
+      margin-top: 40px;
+    }
+  }
+
+  .pill {
+    border-radius: 100px;
+    background-color: rgba(23, 29, 27, 1);
+    height: 16px;
+  }
+
+  .bottom-icon {
+    aspect-ratio: 1.09;
+    object-fit: auto;
+    object-position: center;
+    width: 48px;
+    align-self: center;
+    margin-top: 64px;
+  }
+
+  @media (max-width: 991px) {
+    .bottom-icon {
+      margin-top: 40px;
+    }
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page 4</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="content">
+      <h1>Welcome to Page 4</h1>
+      <button class="prevPage" data-target="page3.html">Go to Page 3</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<section class="loading-container">
+  <div class="content-wrapper">
+    <div class="left-column">
+      <div class="icon-wrapper">
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/22bea65e7b0bee04c43d30558e8d99233c8649f4c646150c12136486cb664caf?apiKey=b0305b0e0a2a481cacd90274eae4b8bf&"
+          class="icon"
+          alt=""
+        />
+      </div>
+      <div class="progress-circle">
+        <div class="progress-indicator"></div>
+      </div>
+      <p class="loading-text">Loading</p>
+    </div>
+    <div class="right-column">
+      <div class="rectangle-wrapper">
+        <div class="rectangle"></div>
+      </div>
+      <div class="pill-wrapper">
+        <div class="pill"></div>
+      </div>
+      <img
+        loading="lazy"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/6d759df8b7ad073a4cd6d9f1e703c20c76f03d0b1b96cb3f5e1367be1e6111e5?apiKey=b0305b0e0a2a481cacd90274eae4b8bf&"
+        class="bottom-icon"
+        alt=""
+      />
+    </div>
+  </div>
+</section>

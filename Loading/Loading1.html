@@ -1,0 +1,98 @@
+<style>
+  .ntr-container {
+    display: flex;
+    justify-content: center;
+    border-radius: 18px;
+    border: 8px solid rgba(116, 119, 117, 0.5);
+    background-color: var(--Schemes-Scrim, #000);
+    gap: 0;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+  }
+
+  .time-wrapper {
+    align-self: start;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 0;
+    width: fit-content;
+    padding: 0 20px;
+  }
+
+  .time-display {
+    display: flex;
+    justify-content: space-between;
+    gap: 4px;
+    font-size: 14px;
+    color: var(--Schemes-On-Surface, #171d1b);
+    line-height: 1.43;
+    padding: 0 16px;
+  }
+
+  .time-text {
+    font-family: Roboto, sans-serif;
+    margin: auto 0;
+  }
+
+  .time-icon {
+    aspect-ratio: 1.15;
+    object-fit: auto;
+    object-position: center;
+    width: 46px;
+  }
+
+  .ntr-text {
+    color: #fff;
+    align-self: center;
+    margin-top: 115px;
+    font: 100px/20% Righteous, sans-serif;
+  }
+
+  .side-icon {
+    aspect-ratio: 0.12;
+    object-fit: auto;
+    object-position: center;
+    width: 44px;
+    align-content: center;
+  }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page 1</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="content">
+      <h1>Welcome to Page 1</h1>
+      <button class="nextPage" data-target="page2.html">Go to Page 2</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<section class="ntr-container">
+  <div class="time-wrapper">
+    <div class="time-display">
+      <span class="time-text">9:30</span>
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/f96d1ce5ac5cfb85cdf9c4dbe7a89b960f17fbdd39ecd667c6dfd83462d7e25d?apiKey=b0305b0e0a2a481cacd90274eae4b8bf&"
+        alt="Time icon"
+        class="time-icon"
+        loading="lazy"
+      />
+    </div>
+    <h2 class="ntr-text">NTR</h2>
+  </div>
+  <img
+    src="https://cdn.builder.io/api/v1/image/assets/TEMP/13fd77df15f9377df98d68b63d9a3482dbd7cdbcaf1e6285541a12e69e63334f?apiKey=b0305b0e0a2a481cacd90274eae4b8bf&"
+    alt="Side decoration"
+    class="side-icon"
+    loading="lazy"
+  />
+</section>

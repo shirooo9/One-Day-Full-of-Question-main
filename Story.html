@@ -1,0 +1,115 @@
+<style>
+    .alarm-container {
+      border-radius: 18px;
+      border: 8px solid rgba(116, 119, 117, 0.5);
+      background-color: #fff;
+      display: flex;
+      max-width: 800px;
+      flex-direction: column;
+      font-size: 25px;
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: 0.25px;
+      line-height: 80%;
+      justify-content: center;
+    }
+    
+    .alarm-content {
+        position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  min-height: 360px;
+  width: 100%;
+  padding-top: 80px;
+  box-sizing: border-box; /* Ensure padding is included in the width */
+  max-width: 100%; /* Ensure content does not overflow the container */
+}
+
+    
+    .alarm-image {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    
+    .alarm-text {
+      position: relative;
+      font-family: Roboto Slab, sans-serif;
+      background-color: rgba(0, 0, 0, 0.5);
+      margin-top: 147px;
+      width: 100%;
+      padding: 55px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    @media (max-width: 991px) {
+      .alarm-container {
+        white-space: initial;
+      }
+    
+      .alarm-content {
+        max-width: 100%;
+        white-space: initial;
+      }
+    
+      .alarm-text {
+        position: relative;
+    font-family: Roboto Slab, sans-serif;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 119px;
+    width: 90%;
+    padding: 58px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .alarm-container,
+      .alarm-content {
+        display: none;
+      }
+    }
+    
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    #alarm-img {
+    position: absolute;
+    width: 35%;
+    height: 63%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 5;
+    right: 2%;
+    left: 35%;
+    top: 8%;
+    bottom: 0%;
+    }
+
+    </style>
+    
+    <section class="alarm-container">
+      <div class="alarm-content">
+        <img id="alarm-img" src="gambar/Alarm,.png" alt="">
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/9fde521c59f5a5a9b41cd2b12183e121e564b76e933c3ca834e3bca6d637acb7?apiKey=b0305b0e0a2a481cacd90274eae4b8bf&" class="alarm-image" alt="Alarm clock background" />
+        <h2 class="alarm-text">Kriiinggg....</h2>
+      </div>
+    </section>

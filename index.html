@@ -1,216 +1,155 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
-    />
-    <title>One Day Full of Questions</title>
-    <link rel="stylesheet" href="css/index.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-  </head>
+<style>
+  .adventure-container {
+    border-radius: 18px;
+    border: 8px solid rgba(116, 119, 117, 0.5);
+    background-color: #fff;
+    display: flex;
+    max-width: 800px;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+  }
 
-  <body>
-    <div style="position: fixed; top: 10px; right: 10px;">
-    </div>
-    <audio src="audio/song.mp3" controls autoplay loop hidden>
-      <p>Your browser does not support the audio element</p>
-    </audio>
+  .adventure-content {
+    background-image: url("../gambar/Background.png");
+    overflow: hidden;
+    width: 100%;
+    padding: 49px 34px 31px;
+  }
 
+  .adventure-layout {
+    display: flex;
+    gap: 20px;
+  }
 
-    <div class="modal fade" id="namaModal" tabindex="-1" role="dialog" aria-labelledby="namaModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="namaModalLabel">Masukan Nama Anda</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <input class="form-control bg-dark text-white" type="text" />
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" onclick="saveNama()">Simpan</button>
-          </div>
-        </div>
+  .adventure-title {
+    -webkit-text-stroke: 1px #000;
+    letter-spacing: 2.25px;
+    border: 1px solid #000;
+    font: 400 30px/67% Righteous, sans-serif;
+    color: #fff;
+  }
+
+  .adventure-subtitle {
+    -webkit-text-stroke: 1px #000;
+    letter-spacing: 0.25px;
+    border: 1px solid #000;
+    margin-top: 213px;
+    font: 700 20px/100% Roboto Slab, -apple-system, Roboto, Helvetica,
+      sans-serif;
+    color: #fff;
+  }
+
+  .menu-container {
+    border-radius: 15px;
+    background-color: rgba(35, 67, 105, 0.6);
+    display: flex;
+    margin-top: 11px;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    color: #000;
+    font-weight: 900;
+    letter-spacing: 0.25px;
+    line-height: 100%;
+    width: 100%;
+    padding: 13px 8px;
+  }
+
+  .menu-item {
+    display: flex;
+    flex-direction: column;
+    font-family: Roboto Slab, sans-serif;
+    position: relative;
+    overflow: hidden;
+    width: 207px;
+    align-items: center;
+    justify-content: center;
+    padding: 26px 60px;
+  }
+
+  .menu-item:not(:first-child) {
+    margin-top: 23px;
+  }
+
+  .menu-item-image {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .menu-item-text {
+    position: relative;
+  }
+
+  @media (max-width: 991px) {
+    .adventure-content {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+
+    .adventure-layout {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+
+    .adventure-title,
+    .adventure-subtitle {
+      max-width: 100%;
+    }
+
+    .adventure-subtitle {
+      margin-top: 40px;
+    }
+
+    .menu-container {
+      margin-top: 40px;
+    }
+
+    .menu-item {
+      padding: 0 20px;
+    }
+  }
+</style>
+
+<section class="adventure-container">
+  <div class="adventure-content">
+    <div class="adventure-layout">
+      <div>
+        <h1 class="adventure-title">ONE DAY FULL OF QUESTION</h1>
+        <p class="adventure-subtitle">Hai Ihsan Siap berpetualang hari ini</p>
       </div>
-    </div>
-
-    <div class="container mt-5 hide" id="start">
-      <div class="col align-self-center">
-        <div class="row mt-3 d-flex justify-content-center">
+      <nav class="menu-container">
+        <div class="menu-item">
           <img
-            src="gambar/Judul.png"
-            class="img-fluid w-100"
-            style="object-fit: cover"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/62aa7e6d92626d12cc98ed7b88d0500606928567c0ca030f5e6c4c9440f6eef3?apiKey=b0305b0e0a2a481cacd90274eae4b8bf&"
+            alt="Story icon"
+            class="menu-item-image"
           />
+          <span class="menu-item-text">Cerita</span>
         </div>
-        <div class="row mt-4 d-flex justify-content-end">
-          <div class="d-flex flex-column align-items-center">
-            <button
-              id="startBtn"
-              class="btn btn-lg bg-dark text-white mb-3"
-              onclick="startGame()"
-            >
-              Cerita
-            </button>
-            <button
-              id="startAcv"
-              class="btn btn-lg bg-dark text-white mb-3"
-              onclick="showAchievements()"
-            >
-              Pencapaian
-            </button>
-            <button
-              id="startOpt"
-              class="btn btn-lg bg-dark text-white mb-3"
-              onclick="showOptions()"
-            >
-              Options
-            </button>
-          </div>
+        <div class="menu-item">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/70606454d07008f90978b98efb5e0051ca70ab4907f5f3c94bd39a166e640285?apiKey=b0305b0e0a2a481cacd90274eae4b8bf&"
+            alt="Achievement icon"
+            class="menu-item-image"
+          />
+          <span class="menu-item-text">Pencapaian</span>
         </div>
-      </div>
+        <div class="menu-item">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/c871f1cecf6730e76932703bc7dc41e2d17308ddd77457df1fe8a17bb4f0772d?apiKey=b0305b0e0a2a481cacd90274eae4b8bf&"
+            alt="Settings icon"
+            class="menu-item-image"
+          />
+          <span class="menu-item-text">Pengaturan</span>
+        </div>
+      </nav>
     </div>
-    <div class="container mt-5 hide" id="game_question">
-      <div class="container">
-        <div id="resume">
-          <div class="row d-flex justify-content-center mb-5">
-            <h6 class="text-danger text-center mt-4">Story</h6>
-          </div>
-          <div class="row">
-            <div class="col-sm-12 col-md-6 text-center d-flex justify-content-end align-items-end">
-              <img
-                class="col-md-6"
-                src=""
-                id="continueImage"
-              />
-            </div>
-            <div class="col-sm-12 col-md-6">
-              <div class="container d-flex h-100 bg-text">
-                <div class="row justify-content-center align-self-center">
-                  <h5 class="card-title text-center" id="continueTitle"></h5>
-                  <p class="card-text text-justify" id="continueText"></p>
-                </div>
-              </div>
-            </div>
-          </div>S
-        
-          <div 
-            <input
-            class="btn-outline-info w-50"
-            id="btn-menu"
-            type="button"
-            value="Menu"
-            onclick="hideResume(), up()"
-           />
-        </div>
-          <div class="row mt-4 d-flex justify-content-center space">
-            <input
-            class="btn-outline-info w-50"
-            id="btn-menu"
-            type="button"
-            value="Menu"
-            onclick="hideResume(), up()"
-           />
-            <input
-              class="btn-outline-info w-50"
-              id="btn-resume"
-              type="button"
-              value="continue"
-              onclick="hideResume(), up()"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container mt-5 hide mb-4" id="game_choice">
-      <div class="container">
-        <div class="row d-flex justify-content-center">
-          <h6 class="text-danger text-center mt-4">TIME TO CHOOSE!</h6>
-        </div>
-        <div class="row mt-3">
-          <div class="col-sm-12 col-md-6 text-center">
-            <img
-              class="card-img-left"
-              src=""
-              id="card-image"
-            />
-          </div>
-          <div class="col-sm-12 col-md-6">
-            <div class="container d-flex h-100 bg-text text-center">
-              <div class="row justify-content-center align-self-center">
-                <h5 class="card-title text-center" id="card-title"></h5>
-                <p class="card-text text-justify" id="card-text"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row d-flex justify-content-center mt-5 space">
-          <h5 class="text-danger text-justify">What is your decision?</h5>
-        </div>
-        <div class="row">
-          <div class="container">
-            <div class="col-sm-12 d-flex justify-content-center mt-2 mb-4">
-              <input
-                class="btn btn-outline-info w-75"
-                type="button"
-                id="btn1"
-                onclick="chooseOption(this.value), up()"
-              />
-              <input
-                class="btn btn-outline-info w-75"
-                type="button"
-                id="btn2"
-                onclick="chooseOption(this.value), up()"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-    <script src="javascript/options.js" type="text/javascript"></script>
-    <script src="javascript/index.js" type="text/javascript"></script>
-    <script>
-      window.onload = function() {
-        var startElement = document.getElementById('start');
-        startElement.style.display = 'none'; // Menyembunyikan elemen
-        startElement.style.opacity = '0.5'; // Membuat elemen transparan
-        startElement.style.pointerEvents = 'none'; // Mencegah interaksi dengan elemen
-      };
-    </script>
-    <script>
-      $(document).ready(function(){
-        $('#namaModal').modal('show');
-      });
-    </script>
-    <script>
-      function saveNama() {
-        var namaInput = document.querySelector('#namaModal .modal-body input').value;
-        if (namaInput.trim() !== '') {
-          $('#namaModal').modal('hide');
-          localStorage.setItem('namaPengguna', namaInput); // Menyimpan nama ke local storage
-          var startElement = document.getElementById('start');
-          startElement.style.display = 'block'; // Menampilkan elemen start
-          startElement.style.opacity = '1'; // Mengatur opasitas kembali ke default
-          startElement.style.pointerEvents = 'auto'; // Mengizinkan interaksi dengan elemen
-        } else {
-          alert('Silakan masukkan nama Anda.');
-        }
-      }
-    </script>
-  </body>
-</html>
+  </div>
+</section>

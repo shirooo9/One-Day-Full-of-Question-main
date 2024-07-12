@@ -1,0 +1,142 @@
+<style>
+  .social-post {
+    border-radius: 18px;
+    border: 8px solid rgba(116, 119, 117, 0.5);
+    background-color: #fff;
+    display: flex;
+    max-width: 800px;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .post-content {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    min-height: 360px;
+    width: 100%;
+    padding-top: 7px;
+  }
+
+  .background-image {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .reaction-icons {
+    position: relative;
+    align-self: flex-end;
+    display: flex;
+    width: 438px;
+    max-width: 100%;
+    align-items: flex-start;
+    gap: 20px;
+    justify-content: space-between;
+  }
+
+  .reaction-icon {
+    object-fit: auto;
+    object-position: center;
+    max-width: 100%;
+  }
+
+  .reaction-icon-1 {
+    aspect-ratio: 3.57;
+    width: 130px;
+  }
+
+  .reaction-icon-2 {
+    aspect-ratio: 3.13;
+    width: 141px;
+    margin-top: 6px;
+  }
+
+  .author-name {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.75);
+    align-self: flex-start;
+    margin-top: 78px;
+    color: #fff;
+    white-space: nowrap;
+    letter-spacing: 0.25px;
+    padding: 11px 34px;
+    font: 900 20px / 100% Roboto Slab, -apple-system, Roboto, Helvetica,
+      sans-serif;
+  }
+
+  .post-text {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    letter-spacing: 0.25px;
+    padding: 58px 60px;
+    font: 700 25px/80% Roboto Slab, sans-serif;
+    text-align: end;
+  }
+
+  /* @media (max-width: 991px) {
+      .post-content {
+        max-width: 100%;
+      }
+    
+      .reaction-icons {
+        flex-wrap: wrap;
+      }
+    
+      .author-name {
+        margin-top: 40px;
+        white-space: initial;
+        padding: 0 20px;
+      }
+    
+      .post-text {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    } */
+
+  #MC-img {
+    position: absolute;
+    object-fit: cover;
+    right: 400px;
+    left: -245;
+    top: 80;
+    bottom: 0%;
+  }
+</style>
+
+<article class="social-post">
+  <div class="post-content">
+    <img
+      loading="lazy"
+      src="https://cdn.builder.io/api/v1/image/assets/TEMP/9fde521c59f5a5a9b41cd2b12183e121e564b76e933c3ca834e3bca6d637acb7?apiKey=b0305b0e0a2a481cacd90274eae4b8bf&"
+      class="background-image"
+      alt="Social post background image"
+    />
+    <div class="reaction-icons">
+      <img id="MC-img" width="250px" src="gambar/MC.png" alt="" />
+      <img
+        loading="lazy"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/f1d36c4daaca5456e2211602450dc5b543c9a786b8e2f93cbd49daabc44ffbb8?apiKey=b0305b0e0a2a481cacd90274eae4b8bf&"
+        class="reaction-icon reaction-icon-1"
+        alt="Reaction icon 1"
+      />
+      <img
+        loading="lazy"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/a80f467e6f1b07c40c4f6f1558618f1a28c074f20011d3452b2fb82fc1dc16eb?apiKey=b0305b0e0a2a481cacd90274eae4b8bf&"
+        class="reaction-icon reaction-icon-2"
+        alt="Reaction icon 2"
+        width="10px"
+      />
+    </div>
+    <h2 class="author-name">Ihsan</h2>
+    <div class="background">
+      <p class="post-text">HOOAAMMM JAM BERAPA INI!!</p>
+    </div>
+  </div>
+</article>
