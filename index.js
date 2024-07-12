@@ -1,3 +1,4 @@
+const inputScreen = document.querySelector("#namaModal");
 const startScreen = document.querySelector("#start");
 const tutorialScreen = document.querySelector("#tutorial");
 const gameScreen = document.querySelector("#game_question");
@@ -26,8 +27,15 @@ const screen = {
   }
 }
 
+function saveNama() {
+  var startElement = document.getElementById('start');
+  startElement.style.display = 'block'; 
+  startElement.style.pointerEvents = 'auto'; 
+}
+
 function startGame() {
-  screen.hide(startScreen);
+  startScreen.style.display = 'none';
+  // screen.hide(startScreen);
   continueStory(choices.get('start'));
   screen.show(gameScreen);
 }
