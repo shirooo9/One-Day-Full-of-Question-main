@@ -180,11 +180,11 @@ const choices = {
       default:
         return {
           continueTitle: "11/29/2032 - Somewhere in Japan...",
-          continueText:"Yamato is in his room trying to hack secret information about aliens from Area 51.",
-          continueImage: "images/01.png",
-          cardImg: "images/27.png",
+          continueText: "Yamato is in his room trying to hack secret information about aliens from Area 51.",
+          continueImage: "gambar/01.png",
+          backgroundImage: "gambar/Kamar.jpg",
           cardTitle: "Yamato successfully hacked!",
-          cardTxt:"The US government saw potential and spread the news that Yamato could work for them. If he refuses, he will be added to the world’s most wanted list!",
+          cardTxt: "The US government saw potential and spread the news that Yamato could work for them. If he refuses, he will be added to the world's most wanted list!",
           opt1: "Masuk Pagi",
           opt2: "Masuk Siang",
         };
