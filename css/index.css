@@ -9,7 +9,7 @@ body:after {
     position: absolute;
     top: 0px;
     left: 0px;
-    background-image: white; 
+    background-image: url('../gambar/Background.jpeg'); 
     background-size: cover;
     width: 100%;
     height: 100%;
